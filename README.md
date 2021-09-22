@@ -1,6 +1,9 @@
 # animationmaker
 포토샵 애니메이션 제작 툴이 안좋아서 만들어봅세
 
+# design
+https://www.figma.com/file/JuJKmG5HISDmLvOZk5j5M1/Untitled?node-id=0%3A1
+
 ## 기술명세  
 ### front  
  + vanilla js  
