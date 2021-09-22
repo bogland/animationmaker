@@ -9,3 +9,17 @@
 ### back  
  + fastapi  
 -> flask 할려다가 swagger를 더 잘 지원하는 라이브러리 찾다가 그럴바에 fastapi 쓰기로함  
+
+## API 가상환경 구성 및 실행
+```
+python -m venv venv
+python -m pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+## requirements로 의존성 저장
+```
+pip freeze > requirements.txt
+```
+  
+  
