@@ -1,0 +1,31 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 90px auto 430px;
+  grid-template-rows: 35px auto 180px;
+
+  #menuTool {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+  }
+  #commandTool {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+  #drawScreen {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    canvas {
+    }
+  }
+
+  #sideTool {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+  }
+  #animationTool {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+}
