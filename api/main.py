@@ -6,11 +6,6 @@ from db.base import Base
 from routes.base import api_router
 from fastapi.staticfiles import StaticFiles
 
-description = """
-Animation Tool API
-## Heading
-**Return JSON format of Hello World **
-"""
 def create_tables():
     Base.metadata.create_all(bind=engine)
 
@@ -24,8 +19,8 @@ def start_application():
     app = FastAPI(
         title=settings.PROJECT_TITLE,
         version=settings.PROJECT_VERSION,
-        description=description,
-        contact={"name": "Sumanshu Nankana", "email": "sumanshunankana@gmail.com"},
+        description=settings.DESCRIPTION,
+        contact={"name": "oh", "email": "guruwang@naver.com"},
     )
     create_tables()
     include_router(app)

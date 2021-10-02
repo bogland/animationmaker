@@ -9,5 +9,4 @@ class User(Base):
     email = Column(String(30), unique=True, nullable=False, index=True)
     hashed_password = Column(String(100), nullable=False)
     is_active = Column(Boolean, default=True)
-    # is_superuser = Column(Boolean, default=False)
-    # jobs = relationship("Job", back_populates="owner")
+    is_superuser = Column(Boolean, default=False)
