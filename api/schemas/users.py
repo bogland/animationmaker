@@ -13,6 +13,6 @@ class UserCreate(BaseModel):
 class ShowUser(BaseModel):
     username: str
     email: EmailStr
-
+    
     class Config:
         orm_mode = True

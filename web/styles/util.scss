@@ -1,0 +1,6 @@
+@function rgbConverter() {
+  $randR: random(255);
+  $randG: random(255);
+  $randB: random(255);
+  @return rgba($randR, $randG, $randB, 0.2);
+}

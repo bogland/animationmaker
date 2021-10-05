@@ -1,0 +1,11 @@
+@use "styles/asset/color" as color;
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: color.$bg_card;
+  & > * {
+    margin: 22px 0;
+  }
+}

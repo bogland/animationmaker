@@ -1,3 +1,5 @@
+@use "/styles/util.scss";
+@use "/styles/asset/color";
 .container {
   height: 100vh;
   width: 100vw;
@@ -8,14 +10,21 @@
   #menuTool {
     grid-column: 1 / 4;
     grid-row: 1 / 2;
+    background: util.rgbConverter();
+    background: color.$bg_card;
+    color: color.$title;
   }
   #commandTool {
     grid-column: 1 / 2;
     grid-row: 2 / 4;
+    background: util.rgbConverter();
+    color: color.$title;
   }
   #drawScreen {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    background: util.rgbConverter();
+    color: color.$title;
     canvas {
     }
   }
@@ -23,9 +32,13 @@
   #sideTool {
     grid-column: 3 / 4;
     grid-row: 2 / 4;
+    background: util.rgbConverter();
+    color: color.$title;
   }
   #animationTool {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
+    background: util.rgbConverter();
+    color: color.$title;
   }
 }
