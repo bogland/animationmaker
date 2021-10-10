@@ -13,6 +13,18 @@
     background: util.rgbConverter();
     background: color.$bg_card;
     color: color.$title;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    .title {
+      grid-column: 2/3;
+      justify-self: center;
+    }
+    .socialLogin {
+      grid-column: 3/3;
+      justify-self: flex-end;
+    }
   }
   #commandTool {
     grid-column: 1 / 2;

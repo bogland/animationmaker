@@ -3,7 +3,6 @@ import Icons, { IconType } from "assets";
 import style from "./Icon.module.scss";
 import { useRecoilState } from "recoil";
 import { iconsState } from "./MenuTool";
-
 class Props {
   type: string = Icons.ic_brush_off;
   active: boolean = false;
