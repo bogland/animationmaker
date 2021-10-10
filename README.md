@@ -49,3 +49,20 @@ alembic upgrade head
         'info':{'skip_autogenerate':True}
         }
 ```
+
+## GOOGLE OAuth Login
+
+nextjs 의 경우 .env 생성후 process.env.GOOGLE_LOGIN_API 사용시 ServerSide에선 정상 출력됨  
+ClientSide에서는 아래 설정을 해줘야 나옴
+
+```
+.env 생성
+.babelrc 생성
+{
+  "presets": ["next/babel"]
+}
+next.config.js 수정
+env: {
+  GOOGLE_LOGIN_API: process.env.GOOGLE_LOGIN_API,
+}
+```

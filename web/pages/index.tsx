@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import GoogleLogin from "react-google-login";
 import style from "./index.module.scss";
 const Home: NextPage = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -13,7 +14,16 @@ const Home: NextPage = () => {
     const ctx = canvasRef.current?.getContext("2d");
     state.ctx = ctx;
     console.log(ctx);
+    console.log("ㅎㅇㅎㅇ");
+    console.log(process.env.GOOGLE_LOGIN_API);
   }, []);
+
+  const onLoginSuccess = () => {
+    alert("success ");
+  };
+  const onLoginFailed = () => {
+    alert("Fail");
+  };
   return (
     <div>
       <Head>
@@ -22,7 +32,15 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <section className={style.container}>
-          <section id={style.menuTool}>메뉴바</section>
+          <section id={style.menuTool}>
+            메뉴바
+            <GoogleLogin
+              clientId={process.env.GOOGLE_LOGIN_API || ""}
+              onSuccess={onLoginSuccess}
+              onFailure={onLoginFailed}
+              buttonText=""
+            />
+          </section>
           <section id={style.commandTool}>
             <MenuTool></MenuTool>
           </section>
