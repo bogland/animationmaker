@@ -11,6 +11,8 @@ class Settings():
   ## Heading
   **Return JSON format of Hello World **
   """
+  JWT_SECRET = os.getenv("secret","secret")
+  JWT_ALGORITHM = os.getenv("algorithm","HS256")
 
   DB_USER: str = os.getenv("DB_USER","root")
   DB_PASSWORD: str = os.getenv("DB_PASSWORD","0000")

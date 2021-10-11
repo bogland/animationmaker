@@ -5,6 +5,12 @@ from db.session import engine
 from db.base import Base
 from routes.base import api_router
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
+
+origins = [
+    "http://localhost",
+    "http://localhost:3000",
+]
 
 def create_tables():
     Base.metadata.create_all(bind=engine)
@@ -22,6 +28,13 @@ def start_application():
         description=settings.DESCRIPTION,
         contact={"name": "oh", "email": "guruwang@naver.com"},
     )
+    app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
     create_tables()
     include_router(app)
     configure_static(app)

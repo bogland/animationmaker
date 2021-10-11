@@ -7,3 +7,4 @@ pydantic[email]        # for email-validation
 passlib                # for password hashing
 aiofiles               # for serving static files
 alembic		#for migration
+PyJWT     #jwt
