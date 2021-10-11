@@ -1,7 +1,56 @@
+@use "styles/asset/color" as color;
+
 .container {
   position: fixed;
-  left: 0;
+  left: calc(50% - 375px); //너비/2
   top: 0;
-  width: 100vw;
+  width: 750px;
   height: 100vh;
+  background: color.$bg_card;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 40px 0px;
+  span {
+    color: color.$title;
+    font: 50px bold;
+  }
+  .closeBtn {
+    height: 50px;
+    width: 50px;
+  }
+}
+.loginBtn {
+  position: absolute;
+  bottom: 0;
+  margin: 0px 95px 95px;
+  width: calc(100% - 95 * 2px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: color.$form_bg;
+
+  button {
+    width: 100% !important;
+    background: color.$form_bg !important;
+    & > span {
+      width: 100% !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 24px !important;
+      .logo {
+        width: 48px;
+        height: 48px;
+      }
+      .text {
+        flex-basis: calc(100% - 48px);
+        text-align: center;
+        color: color.$form_hint;
+        font-size: 50px;
+      }
+    }
+  }
 }

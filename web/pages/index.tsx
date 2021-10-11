@@ -1,5 +1,6 @@
-import Login, { LoginPanelState } from "components/Login";
+import Login, { ILogin } from "components/Login";
 import MenuTool from "components/MenuTool";
+import { useLogin } from "components/useLogin";
 import type { NextPage } from "next";
 import Head from "next/head";
 import React, { useEffect, useRef } from "react";
@@ -7,9 +8,8 @@ import { useRecoilState } from "recoil";
 import style from "./index.module.scss";
 
 const Home: NextPage = () => {
+  const { setLoginPanelVisible } = useLogin();
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [loginPanelVisible, setLoginPanelVisible] =
-    useRecoilState(LoginPanelState);
   const state: any = {
     ctx: null,
   };
@@ -17,13 +17,11 @@ const Home: NextPage = () => {
     const ctx = canvasRef.current?.getContext("2d");
     state.ctx = ctx;
     console.log(ctx);
-    console.log("ㅎㅇㅎㅇ");
     console.log(process.env.GOOGLE_LOGIN_API);
   }, []);
 
   const openSocialLogin = () => {
     setLoginPanelVisible(true);
-    alert("ㅎㅇㅎㅇ");
   };
 
   return (

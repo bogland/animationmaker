@@ -7,6 +7,8 @@ export type IconType = {
   ic_erase_on: string;
   ic_paint_on: string;
   ic_user_on: string;
+  ic_login_google: string;
+  ic_close: string;
 };
 
 const Icons: IconType | { [key: string]: string } = {
@@ -18,6 +20,8 @@ const Icons: IconType | { [key: string]: string } = {
   ic_erase_on: "/images/ic_erase_on.png",
   ic_paint_on: "images/ic_paint_on.png",
   ic_user_on: "/images/ic_user_on.png",
+  ic_login_google: "/images/ic_login_google.png",
+  ic_close: "/images/ic_close.png",
 };
 
 export default Icons;
