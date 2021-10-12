@@ -66,3 +66,28 @@ env: {
   GOOGLE_LOGIN_API: process.env.GOOGLE_LOGIN_API,
 }
 ```
+
+## Typescript Snippets  
+```
+	"Creat React Typescript Functional Component": {
+		"prefix": "tfc",
+		"body": [
+			"import React from 'react';",
+			"",
+			"type Props = {",
+			"}",
+			"",
+			"const ${1:${TM_FILENAME_BASE}} = (props:Props) => {",
+			"  return (",
+			"    <>",
+			"      ${2:}",
+			"    </>",
+			"  );",
+			"};",
+			"",
+			"export default ${1:${TM_FILENAME_BASE}};"
+		],
+		"description": "Creat React Typescript Functional Component"
+	}
+}
+```
