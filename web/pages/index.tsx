@@ -1,5 +1,6 @@
+import Canvas from "components/Canvas";
 import Login, { ILogin } from "components/Login";
-import MenuTool from "components/MenuTool";
+import MenuTool from "components/MenuTool/MenuTool";
 import { useLogin } from "components/useLogin";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -43,7 +44,7 @@ const Home: NextPage = () => {
               <MenuTool></MenuTool>
             </section>
             <section id={style.drawScreen}>
-              <canvas ref={canvasRef} height={600} width={400}></canvas>
+              <Canvas></Canvas>
             </section>
             <section id={style.sideTool}>사이드툴</section>
             <section id={style.animationTool}>애니메이션툴</section>

@@ -26,12 +26,12 @@ export const useLogin = (): ILogin => {
     console.log(res);
     const data: UserInfo = {
       email: res.profileObj.email,
-      username: res.profileObj.name,
+      username: res.profileObj.username,
       type: "google",
     };
     console.log("apiURL : ", process.env.APIURL);
     const token: string = await userLogin(data);
-    dispatch(setAuth({ token }));
+    dispatch(setAuth({ token, username: data.username, email: data.email }));
   };
   const onLoginFail = (res: any) => {
     console.log("실패");

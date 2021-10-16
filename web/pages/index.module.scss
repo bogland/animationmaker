@@ -2,9 +2,9 @@
 @use "/styles/asset/color";
 .container {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: grid;
-  grid-template-columns: 90px auto 430px;
+  grid-template-columns: 90px auto auto;
   grid-template-rows: 35px auto 180px;
 
   #menuTool {
@@ -15,14 +15,14 @@
     color: color.$title;
 
     display: grid;
-    grid-template-columns: auto auto auto;
+    width: 100%;
     align-items: center;
     .title {
-      grid-column: 2/3;
+      grid-column: 2 / 3;
       justify-self: center;
     }
     .socialLogin {
-      grid-column: 3/3;
+      grid-column: 3 / 4;
       justify-self: flex-end;
     }
   }
