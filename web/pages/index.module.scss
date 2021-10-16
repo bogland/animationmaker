@@ -2,7 +2,7 @@
 @use "/styles/asset/color";
 .container {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: grid;
   grid-template-columns: 90px auto auto;
   grid-template-rows: 35px auto 180px;
@@ -35,10 +35,12 @@
   #drawScreen {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    background: util.rgbConverter();
+    background: color.$bg_main;
     color: color.$title;
-    canvas {
-    }
+
+    overflow: auto; //for scrolling canvas on grid
+    min-width: 0px;
+    min-height: 0px;
   }
 
   #sideTool {

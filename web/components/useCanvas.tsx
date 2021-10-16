@@ -18,22 +18,33 @@ const useCanvas = () => {
     // );
   }, []);
 
-  const drawStart = () => {
+  const drawStart = (e) => {
+    // const ctx = canvasRef.current?.getContext("2d");
+    // const { layerX: x, layerY: y } = e.nativeEvent; //mouseMove : e.nativeEvent
+    // ctx.beginPath();
+    // ctx.moveTo(x, y);
     state.onDraw = true;
   };
 
   const draw = (e: any) => {
+    // console.log(e);
     if (!state.onDraw) return;
-    const { layerX: x, layerY: y } = e.nativeEvent;
+    const { layerX: x, layerY: y } = e.nativeEvent; //mouseMove : e.nativeEvent
     const ctx = canvasRef.current?.getContext("2d");
     ctx.save();
     if (drawMode == CursorState.Erase) {
       ctx.globalCompositeOperation = "destination-out";
     }
     ctx.fillStyle = "black";
+    const brushSize = 2;
+    // ctx.lineWidth = brushSize;
     ctx.beginPath();
-    ctx.arc(x, y, 35, 0, Math.PI * 2, false);
+    ctx.arc(x, y, brushSize, 0, Math.PI * 2, false);
     ctx.fill();
+    // ctx.lineTo(x, y);
+    // ctx.stroke();
+    // ctx.beginPath();
+    // ctx.moveTo(x, y);
     ctx.restore();
   };
 

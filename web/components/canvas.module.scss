@@ -1,5 +1,9 @@
-.canvas {
-  width: 1000px;
-  height: 600px;
-  background: yellow;
+@use "/styles/asset/color";
+
+.canvasWrap {
+  .canvas {
+    width: 1000px;
+    height: 600px;
+    background: white;
+  }
 }
