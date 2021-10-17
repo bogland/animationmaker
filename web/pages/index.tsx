@@ -10,16 +10,7 @@ import style from "./index.module.scss";
 
 const Home: NextPage = () => {
   const { setLoginPanelVisible } = useLogin();
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const state: any = {
-    ctx: null,
-  };
-  useEffect(() => {
-    const ctx = canvasRef.current?.getContext("2d");
-    state.ctx = ctx;
-    console.log(ctx);
-    console.log(process.env.GOOGLE_LOGIN_API);
-  }, []);
+  useEffect(() => {}, []);
 
   const openSocialLogin = () => {
     setLoginPanelVisible(true);
