@@ -6,24 +6,24 @@ type Props = {};
 const Canvas = (props: Props) => {
   const { canvasRef, canvasWrapRef, drawStart, draw, drawStop } = useCanvas();
   useEffect(() => {
-    // window.addEventListener("pointermove", function (e) {
-    //   const events = e.getCoalescedEvents();
-    //   for (const e of events) {
-    //     // console.log(events.length);
-    //     draw(e);
-    //   }
-    // });
+    canvasWrapRef.current.addEventListener("pointermove", function (e) {
+      const events = e.getCoalescedEvents();
+      for (const e of events) {
+        // console.log(events.length);
+        draw(e);
+      }
+    });
+    canvasWrapRef.current.addEventListener("mousedown", function (e) {
+      drawStart(e);
+    });
+    canvasWrapRef.current.addEventListener("mouseup", function (e) {
+      drawStop(e);
+    });
   }, []);
 
   return (
     <>
-      <section
-        ref={canvasWrapRef}
-        className={style.canvasWrap}
-        onMouseDown={drawStart}
-        onMouseUp={drawStop}
-        onPointerMove={draw}
-      >
+      <section ref={canvasWrapRef} className={style.canvasWrap}>
         <canvas
           ref={canvasRef}
           className={style.canvas}
