@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { atom, useRecoilState } from "recoil";
 import { UserInfo, userLogin, userVerify } from "service/serviceUser";
-import { ILogin } from "./Login";
 import { setAuth } from "./reducers/AuthReducer";
 import { RootReducerType } from "./store/RootReducer";
 
@@ -10,8 +9,17 @@ export const LoginPanelState = atom({
   default: { visible: false }, // default value (aka initial value)
 });
 
+export interface ILogin {
+  visible: boolean;
+  setLoginPanelVisible(visible: boolean): void;
+  onClose(): void;
+  onLoginSuccess(res: any): void;
+  onLoginFail(res: any): void;
+  email: string | null;
+}
+
 export const useLogin = (): ILogin => {
-  const { token } = useSelector((state: RootReducerType) => state.auth);
+  const { token, email } = useSelector((state: RootReducerType) => state.auth);
   const dispatch = useDispatch();
   const [state, setState] = useRecoilState(LoginPanelState);
   const visible = state.visible;
@@ -26,7 +34,7 @@ export const useLogin = (): ILogin => {
     console.log(res);
     const data: UserInfo = {
       email: res.profileObj.email,
-      username: res.profileObj.username,
+      username: res.profileObj.name,
       type: "google",
     };
     console.log("apiURL : ", process.env.APIURL);
@@ -43,5 +51,6 @@ export const useLogin = (): ILogin => {
     onClose,
     onLoginFail,
     onLoginSuccess,
+    email,
   };
 };

@@ -1,5 +1,5 @@
 import Canvas from "components/Canvas";
-import Login, { ILogin } from "components/Login";
+import Login from "components/Login";
 import MenuTool from "components/MenuTool/MenuTool";
 import { useLogin } from "components/useLogin";
 import type { NextPage } from "next";
@@ -9,7 +9,7 @@ import { useRecoilState } from "recoil";
 import style from "./index.module.scss";
 
 const Home: NextPage = () => {
-  const { setLoginPanelVisible } = useLogin();
+  const { setLoginPanelVisible, email } = useLogin();
   useEffect(() => {}, []);
 
   const openSocialLogin = () => {
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
             <section id={style.menuTool}>
               <div className={style.title}>제목</div>
               <div className={style.socialLogin} onClick={openSocialLogin}>
-                로그인
+                {email ? email : "로그인"}
               </div>
             </section>
             <section id={style.commandTool}>

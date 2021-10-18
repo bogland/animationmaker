@@ -13,10 +13,10 @@ const Canvas = (props: Props) => {
         draw(e);
       }
     });
-    canvasWrapRef.current.addEventListener("mousedown", function (e) {
+    canvasWrapRef.current.addEventListener("pointerdown", function (e) {
       drawStart(e);
     });
-    canvasWrapRef.current.addEventListener("mouseup", function (e) {
+    canvasWrapRef.current.addEventListener("pointerup", function (e) {
       drawStop(e);
     });
   }, []);

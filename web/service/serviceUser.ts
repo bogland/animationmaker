@@ -1,5 +1,7 @@
 import Axios from "axios";
-Axios.defaults.baseURL = "http://127.0.0.1:8000/";
+import { APIURL } from "config";
+Axios.defaults.baseURL = APIURL;
+console.log(APIURL);
 
 export const userVerify = async (token: string): Promise<boolean> => {
   console.log("api Url : ", process.env.APIURI);

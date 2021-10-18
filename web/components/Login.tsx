@@ -5,14 +5,6 @@ import { atom, useRecoilState } from "recoil";
 import style from "./Login.module.scss";
 import { useLogin } from "./useLogin";
 
-export interface ILogin {
-  visible: boolean;
-  setLoginPanelVisible(visible: boolean): void;
-  onClose(): void;
-  onLoginSuccess(res: any): void;
-  onLoginFail(res: any): void;
-}
-
 const Login = () => {
   const {
     visible,
