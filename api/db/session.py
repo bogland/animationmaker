@@ -6,6 +6,8 @@ from sqlalchemy.orm import sessionmaker
 from typing import Generator
 import jwt 
 from db.models.users import User
+from db.models.projects import Project
+from db.models.layers import Layer
 from sqlalchemy.orm import Session
 
 SQLALCHEMY_DATABASE_URL = settings.DATABASE_URL

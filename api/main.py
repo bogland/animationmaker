@@ -8,8 +8,8 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
 origins = [
-    "http://localhost",
     "http://localhost:3000",
+    "http://127.0.0.1:3000",
 ]
 
 def create_tables():
