@@ -25,6 +25,8 @@ services:
     links:
       - db
     build: ./api
+    env_file:
+      - api/.env
     ports:
       - "5000:5000"
     networks:
