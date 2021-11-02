@@ -17,19 +17,27 @@
     display: grid;
     width: 100%;
     align-items: center;
+    & > * {
+      grid-column-start: 1;
+      grid-row-start: 1;
+    }
     .title {
-      grid-column: 2 / 3;
       justify-self: center;
     }
-    svg {
-      path,
-      line {
-        stroke: var(--title);
-      }
-    }
-    .socialLogin {
-      grid-column: 3 / 4;
+    .icon {
       justify-self: flex-end;
+      display: flex;
+      align-items: center;
+      svg {
+        width: 35px;
+        height: 35px;
+        path,
+        line {
+          stroke: var(--title);
+        }
+      }
+      .socialLogin {
+      }
     }
   }
   #commandTool {
