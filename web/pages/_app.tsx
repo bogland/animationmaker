@@ -1,4 +1,6 @@
 import "../styles/reset.css";
+import "../styles/asset/global.scss";
+
 import type { AppProps } from "next/app";
 import { RecoilRoot } from "recoil";
 import { configureStore } from "@reduxjs/toolkit";

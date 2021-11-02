@@ -1,0 +1,28 @@
+$title: #ffffff;
+$active: #ff5a1e;
+$inactive: #4b4655;
+$subinfo: #646464;
+$bg_main: #322d37;
+$bg_card: #1e1e28;
+$form_bg: #282832;
+$form_hint: #646464;
+body {
+  --title: #ffffff;
+  --active: #ff5a1e;
+  --inactive: #4b4655;
+  --subinfo: #646464;
+  --bg_main: #322d37;
+  --bg_card: #1e1e28;
+  --form_bg: #282832;
+  --form_hint: #646464;
+}
+body.bright {
+  --title: #5a3228;
+  --active: #ff6414;
+  --inactive: #c8c8c8;
+  --subinfo: #aaaaaa;
+  --bg_main: #e6e6e6;
+  --bg_card: #fff5eb;
+  --form_bg: #f5f5f5;
+  --form_hint: #aaaaaa;
+}

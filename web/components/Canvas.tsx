@@ -9,7 +9,6 @@ const Canvas = (props: Props) => {
     canvasWrapRef.current.addEventListener("pointermove", function (e) {
       const events = e.getCoalescedEvents();
       for (const e of events) {
-        // console.log(events.length);
         draw(e);
       }
     });

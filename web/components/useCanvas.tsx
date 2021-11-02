@@ -36,7 +36,7 @@ const useCanvas = () => {
 
     console.log(ctx.globalCompositeOperation);
     ctx.fillStyle = "black";
-    const brushSize = 2;
+    const brushSize = 1;
     ctx.beginPath();
     ctx.arc(x, y, brushSize, 0, Math.PI * 2, false);
     ctx.fill();
@@ -48,7 +48,7 @@ const useCanvas = () => {
     ctx.moveTo(preX, preY);
     ctx.lineTo(x, y);
     ctx.stroke();
-    // ctx.restore();
+    ctx.restore();
 
     state.prev = { x: x, y: y };
   };

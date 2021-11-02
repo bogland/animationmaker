@@ -1,4 +1,4 @@
-@use "styles/asset/color" as color;
+// @use "styles/asset/color" as color;
 
 .container {
   position: fixed;
@@ -6,7 +6,7 @@
   top: 0;
   width: 750px;
   height: 100vh;
-  background: color.$bg_card;
+  background: var(--bg_card);
 }
 .header {
   display: flex;
@@ -14,7 +14,7 @@
   align-items: center;
   margin: 40px 40px 0px;
   span {
-    color: color.$title;
+    color: var(--title);
     font: 50px bold;
   }
   .closeBtn {
@@ -30,11 +30,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: color.$form_bg;
+  background: var(--form_bg);
 
   button {
     width: 100% !important;
-    background: color.$form_bg !important;
+    background: var(--form_bg) !important;
     & > span {
       width: 100% !important;
       display: flex !important;
@@ -48,7 +48,7 @@
       .text {
         flex-basis: calc(100% - 48px);
         text-align: center;
-        color: color.$form_hint;
+        color: var(--form_hint);
         font-size: 50px;
       }
     }
